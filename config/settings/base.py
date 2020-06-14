@@ -93,7 +93,6 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    "config",
     "custom_user",
     "custom_image",
     "blog"
