@@ -1,0 +1,9 @@
+pytz
+python-slugify
+Pillow
+argon2-cffi
+
+django
+django-environ
+wagtail
+wagtail-django-recaptcha

@@ -1,0 +1,16 @@
+-r base.txt
+
+# Add extra test requirements here
+
+# Testing
+# ------------------------------------------------------------------------------
+mypy
+pytest
+pytest-sugar
+pytest-django
+coverage
+factory-boy
+pytest-env
+wagtail-factories
+
+django-coverage-plugin
