@@ -23,14 +23,14 @@ class BlogIndexPage(RoutablePageMixin, BasePage):
     def blog_page(self):
         return self.specific
 
-    # def get_posts(self):
-    #     return PostPage.objects.descendant_of(self).live().order_by('-first_published_at')
+    def get_posts(self):
+        return PostPage.objects.descendant_of(self).live().order_by('-first_published_at')
 
 class PostPage(BasePage):
     date = models.DateField(_("Post date"), default=datetime.datetime.today, help_text=_("Date when the post will be posted"))
     excerpt = models.CharField(_("Excerpt"), max_length=255, help_text=_("Post's summary, maximum 255 characters"))
     body = RichTextField(verbose_name=_("Post's Body"), help_text=_("It will be the main content of your post"))
-
+    visit_count = models.PositiveIntegerField(default=0, editable=False)
 
     header_image = models.ForeignKey(
         'custom_image.customimage',
@@ -51,6 +51,7 @@ class PostPage(BasePage):
         ImageChooserPanel('header_image'),
         MultiFieldPanel([
             FieldPanel('date'),
+            #FieldPanel('visit_count'),
             #FieldPanel('tags'),
             #FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
         ], heading=_("Additional Post's information")),

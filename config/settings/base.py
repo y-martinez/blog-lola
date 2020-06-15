@@ -89,7 +89,8 @@ THIRD_PARTY_APPS = [
     'modelcluster',
     'taggit',
     'captcha',
-    'wagtailcaptcha'
+    'wagtailcaptcha',
+    'colorfield'
 ]
 
 LOCAL_APPS = [
